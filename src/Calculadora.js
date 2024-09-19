@@ -15,9 +15,15 @@ class Calculadora {
       }
       this.#resultado = numero;
     }
-    soma() {
-      
+
+    soma(numero) {
+      if(typeof numero !== 'number') {
+        throw new TypeError("O argumento deve ser um número válido");
+      }
+      this.#resultado = this.#resultado + numero;
     }
+
+
     divisao(numero) {
       if(typeof numero == 'string') {
         numero = numero-0;
